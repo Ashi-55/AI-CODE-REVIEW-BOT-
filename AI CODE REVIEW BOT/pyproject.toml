@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aicr"
+version = "0.1.0"
+description = "AI-powered Code Review Bot for Git repositories"
+readme = "README.md"
+authors = [{ name = "AI Code Review Bot" }]
+requires-python = ">=3.9"
+dependencies = [
+    "openai>=1.3.5",
+    "requests>=2.31.0",
+    "pylint>=2.17.5",
+    "bandit>=1.7.6",
+    "radon>=5.1.0",
+    "typer>=0.9.0",
+    "rich>=13.7.0",
+    "gitpython>=3.1.40",
+    "pydantic>=2.7.0",
+    "unidiff>=0.7.5",
+]
+
+[project.scripts]
+aicr = "aicr.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["aicr", "aicr.*"]
